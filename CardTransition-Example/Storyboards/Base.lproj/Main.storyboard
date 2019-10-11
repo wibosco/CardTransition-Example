@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iHN-Pb-4Jq">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Master View Controller-->
+        <scene sceneID="pbC-YT-Xgw">
+            <objects>
+                <viewController id="iHN-Pb-4Jq" customClass="MasterViewController" customModule="CardTransition_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ysk-u9-kuA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="D5g-lE-Mu4">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UuN-ed-896">
+                                    <size key="itemSize" width="414" height="241"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CardCollectionViewCell" id="MHj-iJ-3Ge" customClass="CardCollectionViewCell" customModule="CardTransition_Example" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="241"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="241"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lhT-cj-efT" customClass="CardViewEmbeddableView" customModule="CardTransition_Example" customModuleProvider="target">
+                                                    <rect key="frame" x="30" y="0.0" width="354" height="241"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="lhT-cj-efT" firstAttribute="leading" secondItem="MHj-iJ-3Ge" secondAttribute="leading" constant="30" id="GfK-AP-eV3"/>
+                                            <constraint firstItem="lhT-cj-efT" firstAttribute="top" secondItem="MHj-iJ-3Ge" secondAttribute="top" id="Kqb-eW-qgc"/>
+                                            <constraint firstAttribute="trailing" secondItem="lhT-cj-efT" secondAttribute="trailing" constant="30" id="e05-lr-2Q2"/>
+                                            <constraint firstAttribute="bottom" secondItem="lhT-cj-efT" secondAttribute="bottom" id="hIN-Or-14J"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="cardView" destination="lhT-cj-efT" id="ufL-Bk-JkF"/>
+                                            <segue destination="Udg-WJ-NIQ" kind="show" customClass="DetailsSegue" customModule="CardTransition_Example" customModuleProvider="target" id="6D3-8r-5O0"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="iHN-Pb-4Jq" id="sfJ-fj-NBl"/>
+                                    <outlet property="delegate" destination="iHN-Pb-4Jq" id="mzf-wq-Svd"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="lYl-gN-GRr" firstAttribute="bottom" secondItem="D5g-lE-Mu4" secondAttribute="bottom" id="55O-SU-64H"/>
+                            <constraint firstItem="D5g-lE-Mu4" firstAttribute="leading" secondItem="lYl-gN-GRr" secondAttribute="leading" id="ArF-ky-p4q"/>
+                            <constraint firstItem="lYl-gN-GRr" firstAttribute="trailing" secondItem="D5g-lE-Mu4" secondAttribute="trailing" id="BjC-cY-qEY"/>
+                            <constraint firstItem="D5g-lE-Mu4" firstAttribute="top" secondItem="lYl-gN-GRr" secondAttribute="top" id="dND-nF-Rzj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lYl-gN-GRr"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="D5g-lE-Mu4" id="d5u-Di-WjC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RbL-Cr-byO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-781.15942028985512" y="-526.33928571428567"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="wA5-36-FZ3">
+            <objects>
+                <viewController id="Udg-WJ-NIQ" customClass="DetailViewController" customModule="CardTransition_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="K1V-ar-ZCI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n3O-tR-TuM" customClass="CardViewEmbeddableView" customModule="CardTransition_Example" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="n3O-tR-TuM" secondAttribute="height" multiplier="1:1" id="2lf-LB-PW0"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RNy-yN-sEg">
+                                <rect key="frame" x="35" y="414" width="344" height="448"/>
+                                <string key="text">Lorem ipsum dolor sit amet, eu putent ancillae accusamus his, sapientem conceptam ne mei. Usu ex tota euripidis posidonium. Pro quis dico ullamcorper ne. Probo nusquam dissentias cu pri, ridens apeirian vulputate ne his.
+
+Ne prima noluisse vis, mundi solet tempor cum ei. Vim id liber voluptatum. Id pro sale aperiri aliquando, nominati mandamus at vim. In cum erant volumus, ludus neglegentur ad quo. Prima aliquando eum cu, nullam laboramus pri at.
+
+Illum impetus offendit id eos, dolorem gubergren ne est, ne nam purto sapientem. Te euismod qualisque vix. Elitr incorrupte eam ne, paulo eripuit reprehendunt nec ut. Enim essent albucius et est, vero neglegentur et vix. Cum ei iriure consequat, legimus suscipiantur no eam. Sea elit facilisis elaboraret ea, est ut aeterno ancillae, ad eam exerci percipit splendide.
+
+Ne idque commune interesset vel. Id bonorum molestie gubergren sit, viris voluptatibus vis id. At affert labore graeco sea. Vis diam partem volumus et. Id vis omnes constituam.
+
+Ei ius unum accusamus dignissim, vix apeirian voluptatum eu. No mel mutat atomorum dissentiet, ius ne erant gloriatur. An idque tacimates his, et ius meis audiam ocurreret. Mel ridens menandri aliquando in. Fuisset dignissim accommodare vis te.
+
+Usu ne ignota definitionem, ut suscipit imperdiet elaboraret sed. Ridens partiendo eam ut, partem minimum vivendum qui cu, epicurei apeirian ea vix. Molestie convenire te mea, te eam errem possim lobortis. Ad melius nostrud nam, pro purto duis sanctus cu. Omnes urbanitas vituperata ex est, copiosae deserunt contentiones eum ut. Vis dico ornatus ei.
+
+Legere appellantur vix eu. Ei accusata consequuntur pri, cum ex meis debitis postulant. Mei nullam voluptaria disputationi et, vel at elit tacimates corrumpit, virtute verterem ex nec. Tale delectus persecuti qui at, vix meis pertinacia ut. Mei et ancillae platonem, mel libris gubergren ex, in vel iusto ignota voluptaria. Pri populo aperiam eleifend at, mel ex facilis iracundia, esse erat intellegebat ut ius.
+
+Noster vulputate eum te. Vis mollis praesent in, te quem agam sanctus eam. Eam sonet tibique eu. Vel labores docendi omnesque ad, sea splendide constituam et, equidem convenire ei qui. Quod fastidii intellegebat ei has, has no nibh instructior, qui ei autem reformidans.
+
+Graeci omnesque no qui, no dolorum disputando sea. Omnis brute vel at. Has an diceret explicari, vidit verear eruditi mei at. No sed malis dolor quando, mei ad vivendo erroribus. Nulla consul corpora ei sed, quod modus soluta vim an, nam eros vidit ea. Veri ancillae instructior vim eu.
+
+Quo eu facilis percipit platonem, ad cetero perfecto eam. Mea convenire moderatius ad, has cu duis conclusionemque, ferri voluptaria vituperatoribus usu in. Elit labore copiosae et vel. Omittam scaevola an mel, labores intellegebat vituperatoribus in ius, mazim reprehendunt id mel. Pro mucius delectus concludaturque eu, everti scribentur no cum.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8b-e7-mzI">
+                                <rect key="frame" x="370" y="44" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="av7-2C-cQ8"/>
+                                    <constraint firstAttribute="width" constant="44" id="b3i-Mp-aNl"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                <state key="normal" title="Close" image="close-button"/>
+                                <connections>
+                                    <action selector="closeButtonPressed:" destination="Udg-WJ-NIQ" eventType="touchUpInside" id="V6g-uI-1Sv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="HSJ-hc-oqb" firstAttribute="trailing" secondItem="g8b-e7-mzI" secondAttribute="trailing" id="7oh-zi-zpg"/>
+                            <constraint firstItem="RNy-yN-sEg" firstAttribute="bottom" secondItem="HSJ-hc-oqb" secondAttribute="bottom" id="8qh-oz-hH3"/>
+                            <constraint firstItem="n3O-tR-TuM" firstAttribute="leading" secondItem="HSJ-hc-oqb" secondAttribute="leading" id="BUq-QD-lZW"/>
+                            <constraint firstItem="HSJ-hc-oqb" firstAttribute="trailing" secondItem="RNy-yN-sEg" secondAttribute="trailing" constant="35" id="GO6-IR-3js"/>
+                            <constraint firstItem="RNy-yN-sEg" firstAttribute="leading" secondItem="HSJ-hc-oqb" secondAttribute="leading" constant="35" id="I18-Dl-fOg"/>
+                            <constraint firstItem="g8b-e7-mzI" firstAttribute="top" secondItem="HSJ-hc-oqb" secondAttribute="top" id="K4s-eg-Vpx"/>
+                            <constraint firstItem="n3O-tR-TuM" firstAttribute="width" secondItem="K1V-ar-ZCI" secondAttribute="width" id="LJ0-gB-dkc"/>
+                            <constraint firstItem="n3O-tR-TuM" firstAttribute="top" secondItem="K1V-ar-ZCI" secondAttribute="top" id="eQ6-N5-QsC"/>
+                            <constraint firstItem="RNy-yN-sEg" firstAttribute="top" secondItem="n3O-tR-TuM" secondAttribute="bottom" id="qSc-Me-BSL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HSJ-hc-oqb"/>
+                    </view>
+                    <connections>
+                        <outlet property="cardView" destination="n3O-tR-TuM" id="mVa-L2-r7x"/>
+                        <outlet property="closeButton" destination="g8b-e7-mzI" id="uUt-ph-gLp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R5z-10-l3P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="42.028985507246382" y="-526.33928571428567"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="close-button" width="170.66667175292969" height="170.66667175292969"/>
+    </resources>
+</document>
